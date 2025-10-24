@@ -2,8 +2,9 @@ public class Member extends User {
     private int borrowedBookCount;
     private final static int MAX_BORROW_LIMIT = 5;
 
-    public Member(){
-
+    public Member(int borrowedBookCount){
+        super();
+        this.borrowedBookCount=borrowedBookCount;
     }
 
     public Member(String name, String contactInfo,int borrowedBookCount){

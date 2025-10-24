@@ -1,5 +1,5 @@
 public abstract class User {
-    private int idCounter=1;
+    private static int idCounter=1;
     private final String userId;
     private String name;
     private String contactInfo;
@@ -20,9 +20,9 @@ public abstract class User {
         this.contactInfo=u.contactInfo;
     }
 
-    private final String generateUniqueId(){
+    private final static  String generateUniqueId(){
         return String.valueOf(idCounter++);
-    }
+    }// cannot be over ridden
 
     public String getUserId(){
         return this.userId;
@@ -44,9 +44,9 @@ public abstract class User {
         this.contactInfo=contactInfo;
     }
 
-    public int getTotalUser() {
+    public static int getTotalUser() {
         return idCounter;
-    }
+    }// class based function
 
     abstract public void displayDashboard();
     abstract public boolean canBorrowBooks();
